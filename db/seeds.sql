@@ -12,5 +12,11 @@ INSERT INTO role(id,title,salary,departmentID) VALUES (6, "Legal Team Lead", 200
 INSERT INTO role(id,title,salary,departmentID) VALUES (7, "Lawyer", 100000, 4);
 
 
+INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (1, "Faduma", "Abdi", 1, NULL)
+INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (2, "Ahmed", "Abdi", 2, 1)
+INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (1, "Guled", "Abdi", 3, NULL)
+INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (1, "Liban", "Abdi", 4, 3)
+INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (1, "Bashir", "Abdi", 6, NULL)
+INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (1, "Amina", "Horris", 7, 6)
 
 
