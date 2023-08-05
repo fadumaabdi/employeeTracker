@@ -42,6 +42,36 @@ const addRoleQuestions = [
     {
         type: "list",
         name: "departmentID",
-        message: "Selcet the department for the role",
+        message: "Select the department for the role",
+        choices: [
+
+        ],
+    },
+]
+
+const addEmployeeQuestions = [
+    {
+        type: "input",
+        name: "firstName",
+        message: "Enter the first name of the employee:",
+    },
+    {
+        type: "input",
+        name: "lastName",
+        message: "Enter the last name of the employee:",
+    },
+    {
+        type: "list",
+        name: "roleID",
+        message: "Selcet the role for the employee:",
+    },
+
+    {
+        type: "input",
+        name: "managerID",
+        message: "Select the employees manager:",
+        choices: [
+
+        ],
     },
 ]
