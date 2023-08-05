@@ -1,7 +1,10 @@
-INSERT INTO department(id,name) VALUES (1, "Sales");
-INSERT INTO department(id,name) VALUES (2, "Engineering");
-INSERT INTO department(id,name) VALUES (3, "Finance");
-INSERT INTO department(id,name) VALUES (4, "Legal");
+INSERT INTO department
+(name) 
+VALUES 
+('Sales'),
+('Engineering'),
+('Finance'),
+('Legal');
 
 INSERT INTO role(id,title,salary,departmentID) VALUES (1, "Sales Lead", 100000, 1);
 INSERT INTO role(id,title,salary,departmentID) VALUES (2, "Sales Person", 80000, 1);
@@ -18,5 +21,3 @@ INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (3,"Guled
 INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (4,"Liban", "Abdi", 4, 3);
 INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (5,"Bashir", "Abdi", 6, NULL);
 INSERT INTO employee(id, firstName, lastName,roleID, managerID) VALUES (6,"Amina", "Horris", 7, NULL);
-
-

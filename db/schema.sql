@@ -12,7 +12,7 @@ CREATE TABLE department
 CREATE TABLE role
 (
     id INT NOT NULL  PRIMARY KEY,
-    name VARCHAR(30),
+    title VARCHAR(30),
     salary DECIMAL, 
     departmentID INT,
     FOREIGN KEY (departmentID)
