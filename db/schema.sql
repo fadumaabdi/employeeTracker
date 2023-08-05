@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS courses_db;
-CREATE DATABASE employeedatabase_db;
+DROP DATABASE IF EXISTS employee_db_db;
+CREATE DATABASE employee_db;
 
 USE employee_db;
 
@@ -20,3 +20,14 @@ CREATE TABLE role
     ON DELETE SET NULL
 );
 
+CREATE TABLE employee_db
+(
+    id INT NOT NULL AUTO_INCREMENTS PRIMARY KEY,
+    firstName VARCHAR(30),
+    lastName VARCHAR(30),
+    roleID INT,
+    managerID INT
+    FOREIGN KEY (role_id)
+    REFERENCES role(id)
+    ON DELETE SET NULL
+);
