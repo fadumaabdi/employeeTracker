@@ -1,4 +1,4 @@
-const mainquestions = [
+const mainQuestions = [
     {
         type: "list",
         name: "option",
@@ -71,7 +71,25 @@ const addEmployeeQuestions = [
         name: "managerID",
         message: "Select the employees manager:",
         choices: [
-
         ],
     },
 ]
+
+const updateEmployeeRoleQuestions = [
+    {
+        type: "list",
+        name: "employeeID",
+        message: "Select the employee to update:",
+    },
+    {
+        type: "list",
+        name: "roleID",
+        message: "Select the employee's new role:",
+        choices: [
+
+        ],
+    },  
+]
+
+module.exports = {mainQuestions, addDepartmentQuestions, addRoleQuestions, addEmployeeQuestions, updateEmployeeRoleQuestions}
+
