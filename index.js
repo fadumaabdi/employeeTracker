@@ -82,4 +82,44 @@ const addRole = () => {
     })
 }
 
+const addEmployee = () => {
+    db.getRoles().then((results) => {
+        const roleQuestion = addEmployeeQuestions[2];
+        results.forEach((role) => {
+            const roleSummary = '${role.title} (${role.department_name}: ${role.salary})';
+            roleQuestion.choices.push({
+                value: role.id,
+                name: role_summary 
+            });
+        });
+
+        //Managers list: get employees from db
+        db.getEmployees().then((results) => {
+ const managerQuestion = addEmployeeQuestions[3];
+ results.forEach((employee) => {
+    managerQuestion.choices.push({
+        value: employee.id,
+        name: employee.name 
+});
+    });
+
+    //blank option for no manager
+    managerQuestion.choices.push({
+        value: null,
+        name: 'None'
+    });
+
+    
+    inquirer.prompt(addEmployeeQuestions)
+    .then((response) => {
+        db.addEmployee(response).then((results) => {
+            console.log('\n', results, '\n');
+            startMenuQuestions();
+
+});
+    })
+});
+    });
+}
+
 
