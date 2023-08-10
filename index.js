@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
-const {mainQuestions, addDepartmentQuestions, addRoleQuestions, addEmployeeQuestions, updateEmployeeRoleQuestions}= require('.questions.js')
-
+const {mainQuestions, addDepartmentQuestions, addRoleQuestions, addEmployeeQuestions, updateEmployeeRoleQuestions}= require('./questions.js')
+const employeedatabase = require('./db/employeedatabase.js')
 // new instance of employeedatabase class
-const db = new EmployeeDatabase({
+const db = new employeedatabase({
     host: 'localhost',
     user: 'root',
     password: 'Accessgranted!',
