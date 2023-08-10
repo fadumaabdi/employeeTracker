@@ -39,4 +39,35 @@ class employeedatabase extends database {
             });
         });
     }
-}
+
+    addDepartment(department){
+        return new Promise((resolve,reject) => {
+            this.db.query("INSERT INTO department SET?", {name: department.departmentName}, (err,results) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(results);
+            });
+        });
+    } 
+    
+    addRole(role) {
+        const roleData = {
+            name: role.name,
+            salary: role.salary,
+            departmentID: role.departmentID
+        };
+
+        return new Promise((resolve,reject) => {
+            this.db.query("INSERT INTO role SET?", roleData, (err,results) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(results);
+            });
+        });
+    } 
+        
+    }
+            
+
