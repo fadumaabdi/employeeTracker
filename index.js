@@ -122,4 +122,40 @@ const addEmployee = () => {
     });
 }
 
+const updateRole= () => {
+    db.getEmployees().then((results) => {
+        const employeeQuestion = updateEmployeeRoleQuestions[0];
+        results.forEach((employee) => {
+           employeeQuestion.choices.push({
+               value: employee.id,
+               name: employee.name 
+           });
+        });
+
+        db.getRoles().then((results) => {
+            const roleQuestion = updateEmployeeRoleQuestions[1];
+            results.forEach((role) => {
+                roleQuestion.choices.push({
+                    value: role.id,
+                    name: role_title
+
+});
+            });
+
+            
+    inquirer.prompt(updateEmployeeRoleQuestions)
+    .then((response) => {
+        db.updateEmployeeRoleQuestions(response).then((results) => {
+            console.log('\n', results, '\n');
+            startMenuQuestions();
+
+        });
+    })
+});
+    });
+}
+
+startMenuQuestions();
+
+
 
