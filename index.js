@@ -12,3 +12,34 @@ const db = new EmployeeDatabase({
 // connect to database
 db.connect();
 
+const startMenuQuestions = () => {
+    inquirer.prompt(mainQuestions)
+    .then((response) => {
+        switch (response.option) {
+            case 'viewDepartments':
+                viewDepartments();
+                break;
+                case 'viewRoles':
+                viewRoles();
+                break;
+                case 'viewEmployees':
+                viewEmployees();
+                break;
+                case 'addDepartment':
+                addDepartment();
+                break;
+                case 'addRole':
+                addRole();
+                break;
+                case 'addEmployee':
+                addEmployee();
+                break;
+                case 'updateRole':
+                updateRole();
+                break;
+
+        }
+    })
+}
+
+
