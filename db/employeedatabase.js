@@ -46,7 +46,7 @@ class employeedatabase extends database {
                 if (err) {
                     reject(err);
                 }
-                resolve(results);
+                resolve("Department ${department.departmentName} added successfully");
             });
         });
     } 
@@ -63,11 +63,41 @@ class employeedatabase extends database {
                 if (err) {
                     reject(err);
                 }
-                resolve(results);
+                resolve("Role ${role.name} added successfully");
             });
         });
     } 
         
+    addEmployee(employee) {
+        const employeeData = {
+            firstName: employee.firstName,
+            lastName: employee.lastName,
+            roleID: employee.roleID,
+            managerID: employee.managerID,
+        };
+
+        return new Promise((resolve,reject) => {
+            this.db.query("INSERT INTO employee SET?", employeeData, (err,results) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve("${employee.firstName} ${employee.lastName} added successfully");
+            });
+        });
+    } 
+
+    updateEmployeeRole(employee){
+        return new Promise((resolve,reject) => {
+            this.db.query("UPDATE employee SET role_id=? WHERE id=?", [employee.roleID, employee.employeeID],(err,results) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(results);
+            });
+        });
+    } 
     }
+    
+    
             
 
