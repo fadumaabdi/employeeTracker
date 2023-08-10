@@ -42,4 +42,44 @@ const startMenuQuestions = () => {
     })
 }
 
+const viewEmployees = () => {
+    //departments from db
+    db.getEmployees().then((results) => {
+        //show results in console
+        console.table (results);
+        //show main menu
+        startMenuQuestions();
+    })
+}
+
+const addDepartment = () => {
+    inquirer.prompt(addDepartmentQuestions)
+    .then((response) => {
+        db.addDepartment(response).then((results) => {
+            console.log('\n', results, '\n');
+            startMenuQuestions();
+        })
+    })
+}
+
+const addRole = () => {
+    db.getDepartments().then((results) => {
+        const departmentQuestion = addRoleQuestions[2];
+        results.forEach((department) => {
+            departmentQuestion.choices.push({
+                value: department.id,
+                name: department.name
+            });
+        });
+    });
+
+    inquirer.prompt(addRoleQuestions)
+    .then((response) => {
+        db.addRole(response).then((results) => {
+            console.log('\n', results, '\n');
+            startMenuQuestions();
+});
+    })
+}
+
 
