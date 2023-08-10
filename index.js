@@ -86,7 +86,7 @@ const addEmployee = () => {
     db.getRoles().then((results) => {
         const roleQuestion = addEmployeeQuestions[2];
         results.forEach((role) => {
-            const roleSummary = '${role.title} (${role.department_name}: ${role.salary})';
+            const roleSummary = '${role.name} (${role.departmentName}: ${role.salary})';
             roleQuestion.choices.push({
                 value: role.id,
                 name: role_summary 
@@ -137,7 +137,7 @@ const updateRole= () => {
             results.forEach((role) => {
                 roleQuestion.choices.push({
                     value: role.id,
-                    name: role_title
+                    name: roleName
 
 });
             });
