@@ -97,6 +97,8 @@ class employeedatabase extends database {
         });
     } 
     }
+
+    module.exports = employeedatabase;
     
     
             
