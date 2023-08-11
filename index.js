@@ -5,7 +5,7 @@ const employeedatabase = require('./db/employeedatabase.js')
 const db = new employeedatabase({
     host: 'localhost',
     user: 'root',
-    password: 'Accessgranted!',
+    password: 'Faduma1998',
     database: 'employee_db'
 });
 
@@ -42,8 +42,27 @@ const startMenuQuestions = () => {
     })
 }
 
-const viewEmployees = () => {
+const viewDepartments = () => {
     //departments from db
+    db.getDepartments().then((results) => {
+        //show results in console
+        console.table (results);
+        //show main menu
+        startMenuQuestions();
+    })
+}
+
+const viewRoles = () => {
+    //roles from db
+    db.getRoles().then((results) => {
+        //show results in console
+        console.table (results);
+        //show main menu
+        startMenuQuestions();
+    })
+}
+const viewEmployees = () => {
+    //employess from db
     db.getEmployees().then((results) => {
         //show results in console
         console.table (results);
@@ -86,10 +105,10 @@ const addEmployee = () => {
     db.getRoles().then((results) => {
         const roleQuestion = addEmployeeQuestions[2];
         results.forEach((role) => {
-            const roleSummary = '${role.name} (${role.departmentName}: ${role.salary})';
+            const roleSummary = '${role.title} (${role.departmentName}: ${role.salary})';
             roleQuestion.choices.push({
                 value: role.id,
-                name: role_summary 
+                name: roleSummary
             });
         });
 
@@ -137,7 +156,7 @@ const updateRole= () => {
             results.forEach((role) => {
                 roleQuestion.choices.push({
                     value: role.id,
-                    name: roleName
+                    name: role.title
 
 });
             });
