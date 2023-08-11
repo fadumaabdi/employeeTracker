@@ -36,7 +36,7 @@ class employeedatabase extends database {
                 CONCAT(employee.firstName,' ', employee.lastName) as name,\
                 role.title as roleName,\
                 role.salary as salary,\
-                department.name as departmentName,\
+                department.name as departmentName\
                 FROM employee\
                 INNER JOIN role ON employee.roleID = role.id\
                 INNER JOIN department ON role.departmentID=department.id\
