@@ -63,7 +63,7 @@ class employeedatabase extends database {
     
     addRole(role) {
         const roleData = {
-            name: role.title,
+            title: role.roleName,
             salary: role.salary,
             departmentID: role.departmentID
         };
