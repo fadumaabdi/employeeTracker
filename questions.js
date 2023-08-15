@@ -70,8 +70,7 @@ const addEmployeeQuestions = [
         type: "input",
         name: "managerID",
         message: "Select the employees manager:",
-        choices: [
-        ],
+        choices: [],
     },
 ]
 
@@ -80,6 +79,7 @@ const updateEmployeeRoleQuestions = [
         type: "list",
         name: "employeeID",
         message: "Select the employee to update:",
+        choices: [],
     },
     {
         type: "list",

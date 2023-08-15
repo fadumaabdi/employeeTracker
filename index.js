@@ -164,7 +164,7 @@ const updateRole= () => {
             
     inquirer.prompt(updateEmployeeRoleQuestions)
     .then((response) => {
-        db.updateEmployeeRoleQuestions(response).then((results) => {
+        db.updateEmployeeRole(response).then((results) => {
             console.log('\n', results, '\n');
             startMenuQuestions();
 
