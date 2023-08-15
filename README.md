@@ -45,8 +45,7 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 # Application Preview
 
-![Click here to access the application recording.](https://fadumaabdi.github.io/employeetracker/)
-()
+[Click here to access the application recording.](https://drive.google.com/file/d/1OkFLk5XztsY39nATpf0TOzmup0LElTdI/view?usp=sharing)
 
 # Links
 
