@@ -142,7 +142,7 @@ const addEmployee = () => {
 }
 
 const updateRole= () => {
-    db.getEmployees().then((row) => {
+    db.getEmployees().then((results) => {
         const employeeQuestion = updateEmployeeRoleQuestions[0];
         results.forEach((employee) => {
            employeeQuestion.choices.push({
